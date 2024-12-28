@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Monte Carlo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Formulir Simulasi Monte Carlo</h1>
+    <form action="/simulate" method="POST">
+        <label for="region">Nama Wilayah:</label>
+        <input type="text" id="region" name="region" required><br><br>
+
+        <label for="current_rate">Angka Kemiskinan Saat Ini (%):</label>
+        <input type="number" id="current_rate" name="current_rate" step="0.1" required><br><br>
+
+        <label for="economic_growth_mean">Rata-rata Pertumbuhan Ekonomi (%):</label>
+        <input type="number" id="economic_growth_mean" name="economic_growth_mean" step="0.1" required><br><br>
+
+        <label for="economic_growth_std">Standar Deviasi Pertumbuhan Ekonomi (%):</label>
+        <input type="number" id="economic_growth_std" name="economic_growth_std" step="0.1" required><br><br>
+
+        <button type="submit">Mulai Simulasi</button>
+    </form>
+</body>
+</html>

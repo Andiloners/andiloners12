@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Simulasi Monte Carlo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Hasil Simulasi Monte Carlo</h1>
+    <h2>Wilayah: {{ region }}</h2>
+    <p>Angka Kemiskinan Saat Ini: {{ current_rate }}%</p>
+    <p>Rata-rata Prediksi: {{ mean_prediction }}%</p>
+    <p>Standar Deviasi Prediksi: {{ std_prediction }}%</p>
+
+    <h3>Hasil Simulasi</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Simulasi</th>
+                <th>Prediksi Kemiskinan (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in results.iterrows() %}
+                <tr>
+                    <td>{{ row['Simulasi'] }}</td>
+                    <td>{{ row['Prediksi Kemiskinan (%)'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br><br>
+    <a href="/">Kembali ke Halaman Utama</a>
+</body>
+</html>
